@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Poké API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row-justify-content-center">
+            <div class="col-md-6 text-center">
+
+
+                <div class="input-groupmb-3">
+                    <input type="text" id="campoBusca" class="form-control" placeholder="Digite o nome do Pokémon...">
+                    <button class="btn btn-danger" type="button" id="btnBuscar">Pesquisar</button>
+                </div>
+
+                <div id="resultado" class="card shadow d-none">
+                    <div class="card-body">
+                        <img id="pokeImg" src="" alt="Sprite do Pokémon" class="img-fluid mb-3">
+                        <h3 id="pokeNome" class="text-capitalize"></h3>
+                        <p class="mb-1"><strong>ID:</strong><span id="pokeId"></span></p>
+                        <p class="mb-1"><strong>Altura:</strong><span id="pokeAltura"></span></p>
+                        <p class="mb-1"><strong>Peso:</strong><span id="pokePeso"></span></p>
+                        <p class="mb-1"><strong>Tipo:</strong><span id="pokeTipo"></span></p>
+                    </div>
+                </div>
+
+                <div id="msgErro" class="alert alert-warning mt-3 d-none">
+                    Pokémon não encontrado. Tente novamente!
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
