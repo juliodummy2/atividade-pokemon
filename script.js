@@ -5,10 +5,26 @@ const msgErro = document.getElementById('msgErro');
 
 function realizarBusca (){
 
-    const nome = campoBusca.Value.toLowerCase().trim();
+    const nome = campoBusca.Value.toLowerCase().trim(); 
 
-    if (nome === ""){
-        alert("Por favor, digite um nome");
-        return;
-    }
+    if (nome === ""){alert("Por favor, digite um nome");return;}
+    const url = `https://pokeapi.co/api/v2/pokemon${nome}`;
+    fetch(url)
+    .then(response => {
+        if(!response.ok){
+            throw new Error('Pokémon inexistente');
+        }
+            return response.json();
+    })
+    .then(data =>{
+        msgErro.classList.add('d-none')
+    })
+
+
+document.getElementById('pokeNome').textContent = data.name;
+document.getElementById('PokeId').textContent = data.id;
+document.getElementById('PokeAltura').textContent = data.height;
+document.getElementById('PokePeso').textContent = data.weight;
+document.getElementById('PokeTipo').textContent = data.types[0].type.name;
+document.getElementById('PokeImg').src = data.sprites.front_default;
 }
