@@ -1,4 +1,4 @@
-{e
+{
 const btnBuscar = document.getElementById('btnBuscar');
 const campoBusca = document.getElementById('campoBusca');
 const resultadoArea = document.getElementById('resultado');
